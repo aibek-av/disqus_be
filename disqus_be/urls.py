@@ -3,7 +3,11 @@
 Include your API resources and views into urlpatterns
 """
 from django.conf.urls import patterns, include, url
+from disqus_be.core_app.api import CommentResource
+comment_resource = CommentResource();
 
-urlpatterns = patterns(
-    '',
+urlpatterns = patterns('',
+	url
+    (r'^api/', include(comment_resource.urls)),
 )
+
